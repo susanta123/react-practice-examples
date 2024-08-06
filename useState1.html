@@ -1,0 +1,22 @@
+<script src="/js/react.development.js"></script>
+<script src="/js/react-dom.development.js"></script>
+<script src="/js/babel.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    function App(){
+        const [cnt,updateCounter] = React.useState(0);
+        const clickMe = () =>{
+            updateCounter(cnt + 1)
+        }
+        return <div>
+                <h1>By clicking Me the Counter will change</h1>
+                <p>Clicked {cnt} times</p>
+                <button onClick={clickMe}>Click Me</button>
+            </div>
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App />)
+
+</script>
